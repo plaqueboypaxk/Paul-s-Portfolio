@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lou — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="topnav">
+    <span class="logo">Lou.</span>
+    <nav>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-label fade-up">Available for freelance</div>
+    <h1 class="fade-up">Developer <br><em>&amp; Designer</em></h1>
+    <p class="fade-up">I craft thoughtful digital experiences<br>through clarity and intention.</p>
+    <a href="#work" class="hero-cta fade-up">See my work ↓</a>
+</section>
+
+<section id="work" class="work-section">
+    <div class="section-header fade-up">
+        <span class="section-label">Selected work</span>
+        <h2>Projects</h2>
+    </div>
+
+    <div class="work-grid">
+
+        <a class="work-card fade-up" href="#">
+            <div class="card-img-wrap">
+                <img src="https://via.placeholder.com/900x600/f5f0ea/c8bfb4?text=LGU+Q%26A" alt="LGU Q&A System">
+                <span class="card-tag">UI Design</span>
+            </div>
+            <div class="card-body">
+                <h3>LGU Q&A System</h3>
+                <p class="small">Academic quiz platform — UI + system design.</p>
+            </div>
+        </a>
+
+        <a class="work-card fade-up" href="#">
+            <div class="card-img-wrap">
+                <img src="https://via.placeholder.com/900x600/eaf0f5/b4bfc8?text=Note+Library" alt="LGU Note Library">
+                <span class="card-tag">UX</span>
+            </div>
+            <div class="card-body">
+                <h3>LGU Note Library</h3>
+                <p class="small">Student upload platform with clean UX.</p>
+            </div>
+        </a>
+
+        <a class="work-card fade-up" href="#">
+            <div class="card-img-wrap">
+                <img src="https://via.placeholder.com/900x600/eaf5ea/b4c8b4?text=Playlist+Mgr" alt="Playlist Manager">
+                <span class="card-tag">Python</span>
+            </div>
+            <div class="card-body">
+                <h3>Playlist Manager</h3>
+                <p class="small">Python-based custom iterator tool.</p>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<section id="about" class="about-section fade-up">
+    <div class="about-inner">
+        <div class="about-text">
+            <span class="section-label">About me</span>
+            <h2>Building with purpose,<br><em>one pixel at a time.</em></h2>
+            <p>
+                I'm Lou — a developer and designer who builds purposeful, minimal 
+                and intuitive experiences. My work focuses on clarity, reduction, 
+                and creating visually calm interfaces that feel effortless to use.
+            </p>
+        </div>
+        <div class="about-stack fade-up">
+            <p class="stack-label">Stack</p>
+            <ul>
+                <li>HTML / CSS / JavaScript</li>
+                <li>Python</li>
+                <li>UI & UX Design</li>
+                <li>Figma</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact-section fade-up">
+    <span class="section-label">Get in touch</span>
+    <h2>Let's build something<br><em>together.</em></h2>
+    <a href="mailto:ngapasarepaul125@gmail.com" class="contact-link">
+        ngapasarepaul125@gmail.com ↗
+    </a>
+</section>
+
+<footer class="fade-up">
+    <span>© 2026 LouDesigns</span>
+    <div class="footer-links">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+    </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-up').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.05}s`;
+    observer.observe(el);
+});
+</script>
+
+</body>
+</html>
